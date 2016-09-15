@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A80DBAA3AED190E5730E2FFEC2B14C841FFBD857",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2A03CE0CF301C466938025B767254CAAC3CB8DB0" : 0,
+    "A80DBAA3AED190E5730E2FFEC2B14C841FFBD857" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3B315162-5432-4A26-A941-A7A6438DACE1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2A03CE0CF301C466938025B767254CAAC3CB8DB0" : "..\/..\/addons\/ofxFlowTools",
+    "A80DBAA3AED190E5730E2FFEC2B14C841FFBD857" : "dasl_visualizer\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "dasl_visualizer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "dasl_visualizer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dasl-\/ofxFlowTools.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2A03CE0CF301C466938025B767254CAAC3CB8DB0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dasl-\/dasl_visualizer.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A80DBAA3AED190E5730E2FFEC2B14C841FFBD857"
+    }
+  ]
+}

@@ -2,7 +2,6 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    
     ofSetVerticalSync(false);
     ofSetLogLevel(OF_LOG_NOTICE);
     
@@ -18,11 +17,13 @@ void ofApp::setup(){
     
     // FLUID & PARTICLES
     fluidSimulation.setup(flowWidth, flowHeight, drawWidth, drawHeight);
-    particleFlow.setup(flowWidth, flowHeight, drawWidth/3, drawHeight/3);
+    particleFlow.setup(flowWidth, flowHeight, drawWidth/2, drawHeight/2);
     
-    flowToolsLogoImage.load("flowtools.png");
-    fluidSimulation.addObstacle(flowToolsLogoImage.getTexture());
-    showLogo = true;
+    showLogo = false;
+    if (showLogo) {
+        flowToolsLogoImage.load("flowtools.png");
+        fluidSimulation.addObstacle(flowToolsLogoImage.getTexture());
+    }
     
     velocityDots.setup(flowWidth / 4, flowHeight / 4);
     
@@ -44,6 +45,12 @@ void ofApp::setup(){
     
     lastTime = ofGetElapsedTimef();
     
+    lastBackgroundColorChangeTime = 0.0;
+    backgroundColors.push_back(ofColor(0,0,0,255));
+    backgroundColors.push_back(ofColor(255,0,0,255));
+    backgroundColors.push_back(ofColor(0,0,255,255));
+    backgroundColors.push_back(ofColor(0,255,0,255));
+    currentBackgroundColorIndex = 0;
 }
 
 //--------------------------------------------------------------
@@ -238,8 +245,8 @@ void ofApp::drawModeSetName(int &_value) {
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofClear(0,0);
-    
+    maybeChangeBackgroundColor();
+
     if (!toggleGuiDraw) {
         ofHideCursor();
         drawComposite();
@@ -584,5 +591,18 @@ void ofApp::audioIn(float * input, int bufferSize, int nChannels){
 void ofApp::updateSound() {
     leftScaledVol = ofMap(leftSmoothedVol, 0.0, 0.17, 0.0, 1.0, true);
     rightScaledVol = ofMap(rightSmoothedVol, 0.0, 0.17, 0.0, 1.0, true);
+}
+
+void ofApp::maybeChangeBackgroundColor() {
+    float currentTime = ofGetElapsedTimef();
+    if (leftScaledVol > volumeThreshold && currentTime - lastBackgroundColorChangeTime >= 0.5) {
+        // Change the background on big noises, only once every half second.
+        lastBackgroundColorChangeTime = currentTime;
+        currentBackgroundColorIndex++;
+        if (currentBackgroundColorIndex >= backgroundColors.size()) {
+            currentBackgroundColorIndex = 0;
+        }
+    }
+    ofBackground(backgroundColors.at(currentBackgroundColorIndex));
 }
 

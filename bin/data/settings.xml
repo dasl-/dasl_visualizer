@@ -59,7 +59,7 @@
 		<cell_size2>1.25</cell_size2>
 		<birth_chance>0.2</birth_chance>
 		<birth_velocity_chance>0.5</birth_velocity_chance>
-		<lifespan>4</lifespan>
+		<lifespan>5.1</lifespan>
 		<lifespan_spread>0.55</lifespan_spread>
 		<mass>0.31</mass>
 		<mass_spread>0.52</mass_spread>

@@ -26,6 +26,8 @@ enum drawModeEnum{
     DRAW_MOUSE
 };
 
+const float volumeThreshold = 0.01;
+
 class ofApp : public ofBaseApp{
 public:
     void	setup();
@@ -136,4 +138,8 @@ private:
     float rightSmoothedVol;
     float leftScaledVol;
     float rightScaledVol;
+    int currentBackgroundColorIndex;
+    void maybeChangeBackgroundColor();
+    float lastBackgroundColorChangeTime;
+    vector<ofColor> backgroundColors;
 };
